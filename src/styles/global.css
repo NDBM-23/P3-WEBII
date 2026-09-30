@@ -106,3 +106,27 @@ header {
 article {
     margin-bottom: 2rem;
 }
+
+/* dark mode */
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+}
+
+.dark .menu {
+    border-color: #fff;
+    color: #fff;
+}
+
+.dark a {
+    color: #ff9776;
+}
+
+.dark .nav-links a {
+    color: #fff;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+    color: #0d0950;
+}
