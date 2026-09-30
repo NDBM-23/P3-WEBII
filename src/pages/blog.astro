@@ -1,4 +1,5 @@
 ---
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 
 const pageTitle = "Mi Blog de Aprendizaje";
@@ -33,11 +34,7 @@ const maxWidth = "700px";
         <title>{pageTitle} - {author}</title>
     </head>
     <body>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/about/">Sobre mí</a>
-            <a href="/blog/">Blog</a>
-        </nav>
+        <Navigation />
 
         <main>
             <h1>{pageTitle}</h1>
