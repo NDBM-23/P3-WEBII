@@ -1,0 +1,12 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #fafafa;
+}
+
+a {
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
