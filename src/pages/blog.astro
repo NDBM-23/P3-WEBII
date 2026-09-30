@@ -1,36 +1,54 @@
 ---
+const pageTitle = "Mi Blog de Aprendizaje";
+const author = "Nestor Becerra";
 
+const posts = [
+    {
+        url: "/posts/post-1/",
+        title: "Publicación 1: Cómo terminé en Desarrollo de Software en el CETI",
+    },
+    {
+        url: "/posts/post-2/",
+        title: "Publicación 2: Programación Web, mi Stack Actual y Astro",
+    },
+    {
+        url: "/posts/post-3/",
+        title: "Publicación 3: Sobreviviendo al CETI y mi futuro en Bajo Nivel",
+    },
+];
 ---
 
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <title>Blog - Nestor Becerra</title>
+        <title>{pageTitle} - {author}</title>
     </head>
     <body>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
+            <a href="/">Inicio</a>
+            <a href="/about/">Sobre mí</a>
             <a href="/blog/">Blog</a>
         </nav>
 
         <main>
-            <h1>My Astro Learning Journey</h1>
-            <p>This is where I will post about my experience learning Astro!</p>
+            <h1>{pageTitle}</h1>
+            <p>
+                Aquí compartiré mi experiencia aprendiendo Astro y mi camino por
+                la carrera de Desarrollo de Software.
+            </p>
 
             <ul>
-                <li>
-                    <a href="/posts/post-1/"
-                        >Post 1: My First Day Learning Astro</a
-                    >
-                </li>
-                <li>
-                    <a href="/posts/post-2/">Post 2: Building My First Pages</a>
-                </li>
+                {
+                    posts.map((post) => (
+                        <li>
+                            <a href={post.url}>{post.title}</a>
+                        </li>
+                    ))
+                }
             </ul>
         </main>
     </body>

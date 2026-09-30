@@ -1,20 +1,44 @@
 ---
+const pageTitle = "Sobre mí";
 
+const identity = {
+    firstName: "Nestor",
+    lastName: "Becerra",
+    country: "México",
+    school: "CETI Tecnólogo",
+    occupation: "Estudiante de Desarrollo de Software",
+    hobbies: ["matemáticas y ciencias", "programación", "explorar tecnología"],
+};
+
+const skills = [
+    "HTML",
+    "JavaScript / React",
+    "API REST",
+    "GraphQL",
+    "Astro",
+    "Git / Control de versiones",
+];
+
+const targetRole = "Programación de bajo nivel";
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <title>About Me - Nestor Becerra</title>
+        <title>{pageTitle} - {identity.firstName} {identity.lastName}</title>
     </head>
     <body>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
+            <a href="/">Inicio</a>
+            <a href="/about/">Sobre mí</a>
             <a href="/blog/">Blog</a>
         </nav>
 
@@ -22,59 +46,69 @@
             <section id="about-me">
                 <header>
                     <img
-                        src="your-photo.jpg"
-                        alt="Profile picture of Nestor Becerra"
+                        src="/your-photo.jpg"
+                        alt={`Foto de perfil de ${identity.firstName} ${identity.lastName}`}
                     />
-                    <h1>Nestor Becerra</h1>
-                    <p>Web Developer &amp; Creative Designer</p>
+                    <h1>{identity.firstName} {identity.lastName}</h1>
+                    <p>{identity.occupation}</p>
                 </header>
 
                 <article>
-                    <h2>Bio</h2>
+                    <h2>Biografía</h2>
                     <p>
-                        Hello! I am a passionate developer with a strong
-                        background in creating clean, accessible, and
-                        user-friendly web experiences. I love solving complex
-                        problems and turning ideas into digital reality.
+                        ¡Hola! Soy estudiante en {identity.school} ({
+                            identity.country
+                        }). Aunque originalmente planeaba entrar a
+                        Electromecánica, terminé en Desarrollo de Software y
+                        descubrí lo emocionante que es crear código que funcione
+                        en el mundo real.
                     </p>
                     <p>
-                        When I'm not coding, you can find me exploring new
-                        technology, reading, or enjoying the outdoors.
+                        La exigencia del CETI me ha enseñado a resolver
+                        problemas complejos bajo presión. Al egresar, mi meta
+                        principal es dedicarme a la {targetRole}.
                     </p>
+
+                    {happy && <p>¡Estoy feliz de estar aprendiendo Astro!</p>}
+                    {finished && <p>¡He terminado este tutorial!</p>}
+                    {
+                        goal === 3 ? (
+                            <p>Mi meta es terminar en 90 min.</p>
+                        ) : (
+                            <p>Mi meta no es de 90 min.</p>
+                        )
+                    }
                 </article>
 
                 <article>
-                    <h2>Skills</h2>
+                    <h2>Habilidades Técnicas</h2>
                     <ul>
-                        <li>HTML</li>
-                        <li>JavaScript / React</li>
-                        <li>UI/UX Design</li>
-                        <li>Git / Version Control</li>
+                        {skills.map((skill) => <li>{skill}</li>)}
                     </ul>
                 </article>
 
                 <article>
-                    <h2>Contact &amp; Links</h2>
+                    <h2>Contacto y Enlaces</h2>
                     <ul>
                         <li>
-                            Email: <a href="mailto:your.email@example.com"
-                                >your.email@example.com</a
+                            Correo: <a href="mailto:tu.correo@ejemplo.com"
+                                >tu.correo@ejemplo.com</a
                             >
                         </li>
                         <li>
                             GitHub: <a
-                                href="https://github.com/yourusername"
+                                href="https://github.com/tuusuario"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                >github.com/yourusername</a
+                                >github.com/tuusuario</a
                             >
                         </li>
                         <li>
                             LinkedIn: <a
-                                href="https://linkedin.com/in/yourusername"
+                                href="https://linkedin.com/in/tuusuario"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                >linkedin.com/in/yourusername</a
+                                >linkedin.com/in/tuusuario</a
                             >
                         </li>
                     </ul>
