@@ -1,11 +1,11 @@
 ---
-title: 'Post 3: Surviving CETI and My Future in Low-Level Dev'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Post 3: Sobreviviendo al CETI y mi futuro en Bajo Nivel'
 pubDate: 2026-03-25
 description: 'Cómo la exigencia del CETI me prepara para el futuro y mi meta de programar a bajo nivel.'
 author: 'Nestor Becerra'
+tags: ["ceti", "bajo nivel", "carrera", "futuro"]
 ---
-
-# La presión del CETI y mi meta a futuro
 
 Estudiar en el CETI es pesado. La carga de trabajo y las tareas son constantes, pero esa misma exigencia te desarrolla dos habilidades clave para cualquier desarrollador:
 

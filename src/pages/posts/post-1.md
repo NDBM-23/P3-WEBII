@@ -1,11 +1,11 @@
 ---
-title: 'Post 1: How I Ended Up in Software Development at CETI'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Post 1: Cómo terminé en Desarrollo de Software en el CETI'
 pubDate: 2026-03-20
 description: 'Mi inicio en CETI Tecnólogo, cómo entré a Desarrollo de Software y la emoción de mis primeros programas.'
 author: 'Nestor Becerra'
+tags: ["ceti", "desarrollo de software", "inicio"]
 ---
-
-# De Electromecánica a Desarrollo de Software en el CETI
 
 Mi llegada a la carrera tiene una historia curiosa. Decidí entrar al **CETI Tecnólogo** en gran parte porque mi papá estudió aquí. Siempre me han gustado las matemáticas y las ciencias, así que sabía que una carrera técnica o ingeniería me daría herramientas con valor real en el mercado, mucho más que una preparatoria tradicional.
 
