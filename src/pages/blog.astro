@@ -1,7 +1,5 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Mi Blog de Aprendizaje";
 const author = "Nestor Becerra";
@@ -22,38 +20,19 @@ const posts = [
 ];
 ---
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle} - {author}</title>
-    </head>
-    <body>
-        <Header />
-
-        <main>
-            <h1>{pageTitle}</h1>
-            <p>
-                Aquí compartiré mi experiencia aprendiendo Astro y mi camino por
-                la carrera de Desarrollo de Software.
-            </p>
-
-            <ul>
-                {
-                    posts.map((post) => (
-                        <li>
-                            <a href={post.url}>{post.title}</a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </main>
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-    </body>
-</html>
+<BaseLayout pageTitle={`${pageTitle} - ${author}`}>
+    <h1>{pageTitle}</h1>
+    <p>
+        Aquí compartiré mi experiencia aprendiendo Astro y mi camino por la
+        carrera de Desarrollo de Software.
+    </p>
+    <ul>
+        {
+            posts.map((post) => (
+                <li>
+                    <a href={post.url}>{post.title}</a>
+                </li>
+            ))
+        }
+    </ul>
+</BaseLayout>

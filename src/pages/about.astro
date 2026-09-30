@@ -1,7 +1,5 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Sobre mí";
 
@@ -30,93 +28,62 @@ const finished = false;
 const goal = 3;
 ---
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle} - {identity.firstName} {identity.lastName}</title>
-    </head>
-    <body>
-        <Header />
+<BaseLayout pageTitle={`${pageTitle} - ${identity.firstName} ${identity.lastName}`}>
+    <section id="about-me">
+        <header>
+            <div>
+                <h1>{identity.firstName} {identity.lastName}</h1>
+                <p>{identity.occupation}</p>
+            </div>
+        </header>
 
-        <main>
-            <section id="about-me">
-                <header>
-                    <div>
-                        <h1>{identity.firstName} {identity.lastName}</h1>
-                        <p>{identity.occupation}</p>
-                    </div>
-                </header>
+        <article>
+            <h2>Biografía</h2>
+            <p>
+                ¡Hola! Soy estudiante en {identity.school} ({identity.country}).
+                Aunque originalmente planeaba entrar a Electromecánica, terminé en
+                Desarrollo de Software y descubrí lo emocionante que es crear código
+                que funcione en el mundo real.
+            </p>
+            <p>
+                La exigencia del CETI me ha enseñado a resolver problemas complejos
+                bajo presión. Al egresar, mi meta principal es dedicarme a la {targetRole}.
+            </p>
+            {happy && <p>¡Estoy feliz de estar aprendiendo Astro!</p>}
+            {finished && <p>¡He terminado este tutorial!</p>}
+            {
+                goal === 3 ? (
+                    <p>Mi meta es terminar en 90 min.</p>
+                ) : (
+                    <p>Mi meta no es de 90 min.</p>
+                )
+            }
+        </article>
 
-                <article>
-                    <h2>Biografía</h2>
-                    <p>
-                        ¡Hola! Soy estudiante en {identity.school} ({
-                            identity.country
-                        }). Aunque originalmente planeaba entrar a
-                        Electromecánica, terminé en Desarrollo de Software y
-                        descubrí lo emocionante que es crear código que funcione
-                        en el mundo real.
-                    </p>
-                    <p>
-                        La exigencia del CETI me ha enseñado a resolver
-                        problemas complejos bajo presión. Al egresar, mi meta
-                        principal es dedicarme a la {targetRole}.
-                    </p>
+        <article>
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                {skills.map((skill) => <li>{skill}</li>)}
+            </ul>
+        </article>
 
-                    {happy && <p>¡Estoy feliz de estar aprendiendo Astro!</p>}
-                    {finished && <p>¡He terminado este tutorial!</p>}
-                    {
-                        goal === 3 ? (
-                            <p>Mi meta es terminar en 90 min.</p>
-                        ) : (
-                            <p>Mi meta no es de 90 min.</p>
-                        )
-                    }
-                </article>
-
-                <article>
-                    <h2>Habilidades Técnicas</h2>
-                    <ul>
-                        {skills.map((skill) => <li>{skill}</li>)}
-                    </ul>
-                </article>
-
-                <article>
-                    <h2>Contacto y Enlaces</h2>
-                    <ul>
-                        <li>
-                            Correo: <a href="mailto:tu.correo@ejemplo.com"
-                                >tu.correo@ejemplo.com</a
-                            >
-                        </li>
-                        <li>
-                            GitHub: <a
-                                href="https://github.com/tuusuario"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >github.com/tuusuario</a
-                            >
-                        </li>
-                        <li>
-                            LinkedIn: <a
-                                href="https://linkedin.com/in/tuusuario"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >linkedin.com/in/tuusuario</a
-                            >
-                        </li>
-                    </ul>
-                </article>
-            </section>
-        </main>
-
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-    </body>
-</html>
+        <article>
+            <h2>Contacto y Enlaces</h2>
+            <ul>
+                <li>
+                    Correo: <a href="mailto:tu.correo@ejemplo.com">tu.correo@ejemplo.com</a>
+                </li>
+                <li>
+                    GitHub: <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+                        github.com/tuusuario
+                    </a>
+                </li>
+                <li>
+                    LinkedIn: <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">
+                        linkedin.com/in/tuusuario
+                    </a>
+                </li>
+            </ul>
+        </article>
+    </section>
+</BaseLayout>

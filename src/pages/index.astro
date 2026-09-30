@@ -1,36 +1,13 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Inicio";
 const name = "Nestor Becerra";
 const role = "Estudiante de Desarrollo de Software en CETI Tecnólogo";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - {name}</title>
-	</head>
-	<body>
-		<Header />
-
-		<main>
-			<h1>{name}</h1>
-			<p>{role}</p>
-			<p>
-				¡Bienvenido a mi sitio web personal, portafolio y blog de
-				aprendizaje!
-			</p>
-		</main>
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayout pageTitle={`${pageTitle} - ${name}`}>
+    <h1>{name}</h1>
+    <p>{role}</p>
+    <p>¡Bienvenido a mi sitio web personal, portafolio y blog de aprendizaje!</p>
+</BaseLayout>
