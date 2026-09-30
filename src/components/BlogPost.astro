@@ -2,9 +2,9 @@
 interface Props {
     url: string;
     title: string;
-    description: string;
-    pubDate: string;
-    tags: string[];
+    description?: string;
+    pubDate?: string;
+    tags?: string[];
 }
 
 const { url, title, description, pubDate, tags } = Astro.props;
@@ -12,8 +12,8 @@ const { url, title, description, pubDate, tags } = Astro.props;
 
 <li class="blog-post">
     <a href={url}>{title}</a>
-    <p class="date">{pubDate.toString().slice(0, 10)}</p>
-    <p class="desc">{description}</p>
+    {pubDate && <p class="date">{pubDate.toString().slice(0, 10)}</p>}
+    {description && <p class="desc">{description}</p>}
     {tags && (
         <ul class="tags">
             {tags.map((tag) => <li>{tag}</li>)}
