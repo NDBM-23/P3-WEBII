@@ -2,6 +2,9 @@
 const pageTitle = "Inicio";
 const name = "Nestor Becerra";
 const role = "Estudiante de Desarrollo de Software en CETI Tecnólogo";
+
+const primaryColor = "#333";
+const maxWidth = "700px";
 ---
 
 <html lang="es">
@@ -28,5 +31,43 @@ const role = "Estudiante de Desarrollo de Software en CETI Tecnólogo";
 				aprendizaje!
 			</p>
 		</main>
+
+		<style define:vars={{ primaryColor, maxWidth }}>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: system-ui, sans-serif;
+				color: var(--primaryColor);
+				padding: 1.5rem;
+			}
+
+			nav {
+				display: flex;
+				justify-content: center;
+				gap: 1.5rem;
+				margin-bottom: 2.5rem;
+			}
+
+			main {
+				max-width: var(--maxWidth);
+				margin: 0 auto;
+			}
+
+			h1 {
+				margin-bottom: 0.5rem;
+			}
+
+			p {
+				margin-bottom: 0.5rem;
+			}
+
+			a {
+				color: var(--primaryColor);
+			}
+		</style>
 	</body>
 </html>

@@ -24,6 +24,9 @@ const targetRole = "Programación de bajo nivel";
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const primaryColor = "#333";
+const maxWidth = "700px";
 ---
 
 <html lang="es">
@@ -45,12 +48,10 @@ const goal = 3;
         <main>
             <section id="about-me">
                 <header>
-                    <img
-                        src="/your-photo.jpg"
-                        alt={`Foto de perfil de ${identity.firstName} ${identity.lastName}`}
-                    />
-                    <h1>{identity.firstName} {identity.lastName}</h1>
-                    <p>{identity.occupation}</p>
+                    <div>
+                        <h1>{identity.firstName} {identity.lastName}</h1>
+                        <p>{identity.occupation}</p>
+                    </div>
                 </header>
 
                 <article>
@@ -115,5 +116,63 @@ const goal = 3;
                 </article>
             </section>
         </main>
+
+        <style define:vars={{ primaryColor, maxWidth }}>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: system-ui, sans-serif;
+                color: var(--primaryColor);
+                padding: 1.5rem;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            main {
+                max-width: var(--maxWidth);
+                margin: 0 auto;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            article {
+                margin-bottom: 2rem;
+            }
+
+            h1,
+            h2 {
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+            }
+
+            ul {
+                padding-left: 1.2rem;
+            }
+
+            li {
+                margin-bottom: 0.25rem;
+            }
+
+            a {
+                color: var(--primaryColor);
+            }
+        </style>
     </body>
 </html>
