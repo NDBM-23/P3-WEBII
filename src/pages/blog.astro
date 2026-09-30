@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const pageTitle = "Mi Blog de Aprendizaje";
@@ -32,28 +33,6 @@ const maxWidth = "700px";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle} - {author}</title>
-    </head>
-    <body>
-        <Navigation />
-
-        <main>
-            <h1>{pageTitle}</h1>
-            <p>
-                Aquí compartiré mi experiencia aprendiendo Astro y mi camino por
-                la carrera de Desarrollo de Software.
-            </p>
-
-            <ul>
-                {
-                    posts.map((post) => (
-                        <li>
-                            <a href={post.url}>{post.title}</a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </main>
-
         <style define:vars={{ primaryColor, maxWidth }}>
             * {
                 box-sizing: border-box;
@@ -99,5 +78,27 @@ const maxWidth = "700px";
                 color: var(--primaryColor);
             }
         </style>
+    </head>
+    <body>
+        <Navigation />
+
+        <main>
+            <h1>{pageTitle}</h1>
+            <p>
+                Aquí compartiré mi experiencia aprendiendo Astro y mi camino por
+                la carrera de Desarrollo de Software.
+            </p>
+
+            <ul>
+                {
+                    posts.map((post) => (
+                        <li>
+                            <a href={post.url}>{post.title}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </main>
+        <Footer />
     </body>
 </html>
